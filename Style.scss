@@ -1,0 +1,136 @@
+@import './variables';
+
+*{
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+#card{
+    font-family: sans-serif;
+    background-color: #c3cfe2;
+    border-radius: $borderradius;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 10px;
+}
+
+main{
+    background-color: #fff;
+    color:$color;
+    text-align: center;
+    font-size: 28px;
+    border-top-left-radius: $borderradius;
+    border-top-right-radius: $borderradius;
+    padding: 20px;
+    img{
+        position:relative;
+        bottom: -60px;
+        z-index: +1;
+    }
+}
+
+footer{
+    background-color: #686de0;
+    color: white;
+    text-align: center;
+    border-bottom-left-radius: $borderradius;
+    border-bottom-right-radius: $borderradius;
+    padding:50px;
+    h3{
+        color: lightgray;
+    }
+}
+
+.testimonial{
+    border: 2px solid $color;
+    border-radius: 15px;
+    box-shadow: 2px 2px 5px $color;
+    padding-bottom: 0px;
+    box-sizing: content-box;
+    width: 400px;
+}
+
+.portfolio{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 80px;
+    grid-gap: 40px;
+    position: relative;
+    }
+    img{
+        width: 70%; 
+        opacity: 1;
+        &:hover{
+          opacity: 0;
+          transition-duration: 1s;
+          transition-timing-function: ease-in-out;
+        }
+    }
+
+.button{
+    position: absolute;
+    align-items:flex-end;
+    margin-top: 150px;
+    margin-left:-200px;
+    opacity: 0;
+} 
+
+.button:hover{
+  background: black;
+  color: white;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
+  opacity: 1;
+}
+
+.fa-laptop-code::before {
+  content: "\f5fc";
+}
+.fa-twitter::before {
+  content: "\f099";
+}
+.fa-linkedin-in::before {
+  content: "\f0e1";
+}
+.fa-facebook-f::before {
+  content: "\f39e";
+}
+.fa-github::before {
+  content: "\f09b";
+}
+
+
+@media(min-width:360px)
+  {
+   .portfolio{
+     display: grid;
+     grid-template-columns: repeat(1,1fr);
+     grid-template-rows: repeat(1,1fr);
+   }
+  }
+
+@media  (min-width: 720px)
+  {
+   .portfolio{
+     display: grid;
+     grid-template-columns: repeat(2,1fr);
+     grid-template-rows: repeat(4, 1fr);
+     grid-gap: 40px;
+   }
+   .button{
+       margin-left: -150px;
+       margin-top: 100px
+   }
+  }
+  
+@media (min-width: 1024px)
+  {
+    .portfolio{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      grid-area: 40px;
+    }
+  }
+
